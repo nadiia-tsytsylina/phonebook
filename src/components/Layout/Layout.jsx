@@ -1,19 +1,20 @@
 import { Outlet } from 'react-router-dom';
-import { Navigation, Container, StyledLink } from './Layout.styled';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from 'redux/selectors';
+import { Navigation, NavContainer, Container } from './Layout.styled';
+import AuthNav from 'components/AuthNav/AuthNav';
+import UserMenu from 'components/UserMenu/UserMenu';
 
 export default function Layout() {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
-    <div>
+    <>
       <Navigation>
-        <Container>
-          <StyledLink to="/register">Register</StyledLink>
-          <StyledLink to="/login">Login</StyledLink>
-          <StyledLink to="/contacts">Contacts</StyledLink>
-        </Container>
+        <NavContainer>{isLoggedIn ? <UserMenu /> : <AuthNav />}</NavContainer>
       </Navigation>
       <Container>
         <Outlet />
       </Container>
-    </div>
+    </>
   );
 }

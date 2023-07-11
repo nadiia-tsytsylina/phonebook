@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { authLogin } from 'redux/operations';
 import {
   Form,
   InputBox,
@@ -10,6 +12,7 @@ import {
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -28,7 +31,7 @@ export default function Login() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(email, password);
+    dispatch(authLogin({ email, password }));
     reset();
   };
 

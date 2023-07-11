@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { authRegister } from 'redux/operations';
 import {
   Form,
   InputBox,
@@ -11,6 +13,7 @@ export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleChange = event => {
     const { name, value } = event.currentTarget;
@@ -32,7 +35,7 @@ export default function Register() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(name, email, password);
+    dispatch(authRegister({ name, email, password }));
     reset();
   };
 

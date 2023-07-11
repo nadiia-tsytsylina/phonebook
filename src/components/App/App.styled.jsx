@@ -1,14 +1,14 @@
 import styled from '@emotion/styled';
 
-export const Container = styled.div`
-  // padding: 36px 24px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  max-width: 1024px;
-`;
+// export const Container = styled.div`
+//   padding: 36px 24px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+//   border-radius: 10px;
+//   max-width: 1024px;
+// `;
 export const Title = styled.h1`
   text-align: center;
   font-size: 48px;

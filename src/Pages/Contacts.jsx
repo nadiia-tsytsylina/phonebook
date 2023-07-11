@@ -1,7 +1,7 @@
 import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { MutatingDots } from 'react-loader-spinner';
-import { Container, Title, SubTitle, Loader } from 'components/App/App.styled';
+import { Title, SubTitle, Loader } from 'components/App/App.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
@@ -20,7 +20,7 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <Container>
+    <>
       <Title>Phonebook</Title>
       <ContactsForm />
       <SubTitle>Contacts</SubTitle>
@@ -47,6 +47,6 @@ export default function Contacts() {
         transition={Zoom}
         hideProgressBar
       />
-    </Container>
+    </>
   );
 }
