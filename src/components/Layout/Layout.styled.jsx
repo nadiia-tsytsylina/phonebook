@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
+import { NavLink } from 'react-router-dom';
 
 export const Navigation = styled('nav')`
-  padding: 20px 0;
   margin-bottom: 20px;
   height: 60px;
   background: rgba(25, 28, 38, 1);
@@ -10,8 +10,26 @@ export const Navigation = styled('nav')`
 `;
 
 export const NavContainer = styled('div')`
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const MainNav = styled('div')`
+  display: flex;
+`;
+
+export const StyledLink = styled(NavLink)`
+  color: #ffffff;
+  padding: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+
+  &.active {
+    color: #ff6c00;
+  }
 `;
 
 export const Container = styled.div`

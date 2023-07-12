@@ -1,12 +1,22 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { selectUserName } from 'redux/selectors';
+import { authLogout } from 'redux/operations';
 import { UserMenuContainer, UserEmail, LogOutButton } from './UserMenu.styled';
 import { FiLogOut } from 'react-icons/fi';
+import { TiUser } from 'react-icons/ti';
 
 export default function UserMenu() {
+  const userName = useSelector(selectUserName);
+  const dispatch = useDispatch();
+
   return (
     <UserMenuContainer>
-      <UserEmail>mango@mail.com</UserEmail>
-      <LogOutButton>
-        Log out <FiLogOut color="#ff6c00" />
+      <UserEmail>
+        <TiUser color="#ff6c00" />
+        {userName}
+      </UserEmail>
+      <LogOutButton type="button" onClick={() => dispatch(authLogout())}>
+        <FiLogOut />
       </LogOutButton>
     </UserMenuContainer>
   );

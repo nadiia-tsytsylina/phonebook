@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 
 export const UserMenuContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 20px;
 `;
 
 export const UserEmail = styled.p`
@@ -11,22 +11,26 @@ export const UserEmail = styled.p`
   line-height: 1.2;
   font-weight: 400;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
 `;
 
 export const LogOutButton = styled.button`
 display:flex;
 align-items: center;
 gap: 8px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
   line-height: 1.2;
-  background: none;
+  background: #ff6c00;
   border: none;
+  border-radius: 12px;
   outline: none;
+  padding: 4px 12px;
   color: #ffffff;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
-    color: #ff6c00;
+    color: #111111;
 `;

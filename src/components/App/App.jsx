@@ -29,6 +29,7 @@ export default function App() {
     // <Container>
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route index element={<div>Home</div>} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="contacts" element={<Contacts />} />
