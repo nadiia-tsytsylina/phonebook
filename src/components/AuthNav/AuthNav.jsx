@@ -1,10 +1,10 @@
-import { StyledLink } from './AuthNav.styled';
+import { StyledLink, AuthContainer } from './AuthNav.styled';
 
 export default function AuthNav() {
   return (
-    <div>
+    <AuthContainer>
       <StyledLink to="/register">Register</StyledLink>
       <StyledLink to="/login">Login</StyledLink>
-    </div>
+    </AuthContainer>
   );
 }

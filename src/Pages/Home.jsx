@@ -5,7 +5,7 @@ import {
   HomeLink,
   HomeTitle,
   HomeText,
-} from 'components/App/App.styled';
+} from 'components/CommonStyles/Home.styled';
 
 export default function Home() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -15,6 +15,8 @@ export default function Home() {
       <HomeTitle>Your Phonebook application</HomeTitle>
       <HomeText>
         This app allows you to store contacts including name and phone number.
+      </HomeText>
+      <HomeText>
         You can also filter the phone book by contact name, which solves the
         problem of finding contacts.
       </HomeText>
@@ -23,7 +25,7 @@ export default function Home() {
           To use the application you need to
           <HomeLink to="/register">Register</HomeLink>
           or
-          <HomeLink to="/login">Login</HomeLink>.
+          <HomeLink to="/login">Login</HomeLink>
         </HomeText>
       )}
     </HomeContainer>

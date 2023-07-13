@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 export const UserMenuContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 `;
 
 export const UserEmail = styled.p`
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1.2;
   font-weight: 400;
   color: #ffffff;
@@ -19,8 +19,7 @@ export const UserEmail = styled.p`
 export const LogOutButton = styled.button`
 display:flex;
 align-items: center;
-gap: 8px;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 1.2;
   background: #753498;
   border: none;

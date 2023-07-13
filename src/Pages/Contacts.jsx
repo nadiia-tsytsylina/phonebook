@@ -1,7 +1,12 @@
 import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { MutatingDots } from 'react-loader-spinner';
-import { Title, SubTitle, Loader } from 'components/App/App.styled';
+import {
+  Title,
+  SubTitle,
+  Loader,
+  ContactListContainer,
+} from 'components/CommonStyles/Contacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchContacts } from 'redux/operations';
@@ -24,8 +29,11 @@ export default function Contacts() {
       <Title>Phonebook</Title>
       <ContactsForm />
       <SubTitle>Contacts</SubTitle>
-      <Filter />
-      <ContactsList />
+      <ContactListContainer>
+        <Filter />
+        <ContactsList />
+      </ContactListContainer>
+
       {isLoading && !error && (
         <Loader>
           <MutatingDots
