@@ -5,11 +5,13 @@ export const ContactName = styled.p`
   font-size: 20px;
   line-height: 1.2;
   font-weight: 600;
+  color: #ffffff;
 `;
 export const ContactNumber = styled.p`
   flex-basis: 20%;
   text-align: center;
   font-size: 20px;
+  color: #ffffff;
 `;
 export const DeleteButton = styled.button`
   display: flex;
@@ -22,11 +24,11 @@ export const DeleteButton = styled.button`
   background: none;
   border: none;
   outline: none;
-  color: #111111;
+  color: #ffffff;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
-    color: #ff6c00;
+    color: #753498;
   }
 `;

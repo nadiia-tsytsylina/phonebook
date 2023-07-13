@@ -11,7 +11,7 @@ export default function Filter() {
   return (
     <FilterBox>
       <Label htmlFor="filter">
-        <FiSearch color="#ff6c00" />
+        <FiSearch color="#753498" />
         Find contact by name
       </Label>
       <Input

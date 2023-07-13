@@ -31,8 +31,8 @@ export default function Contacts() {
           <MutatingDots
             height="100"
             width="100"
-            color="#ff6c00"
-            secondaryColor="#191c26"
+            color="rgba(117, 52, 152, 0.5)"
+            secondaryColor="rgba(255, 255, 255, 0.5)"
             radius="12.5"
             ariaLabel="mutating-dots-loading"
             wrapperStyle={{}}
@@ -41,12 +41,7 @@ export default function Contacts() {
           />
         </Loader>
       )}
-      <ToastContainer
-        autoClose={1500}
-        theme="dark"
-        transition={Zoom}
-        hideProgressBar
-      />
+      <ToastContainer autoClose={1500} transition={Zoom} hideProgressBar />
     </>
   );
 }

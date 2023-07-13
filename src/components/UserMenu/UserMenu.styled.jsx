@@ -22,15 +22,15 @@ align-items: center;
 gap: 8px;
   font-size: 16px;
   line-height: 1.2;
-  background: #ff6c00;
+  background: #753498;
   border: none;
   border-radius: 12px;
   outline: none;
   padding: 4px 12px;
   color: #ffffff;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
-    color: #111111;
+    transform: scale(1.25)
 `;
