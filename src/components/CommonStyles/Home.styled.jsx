@@ -36,7 +36,7 @@ export const HomeLink = styled(Link)`
 
   :hover,
   :focus {
-    color: #753498;
-    border-bottom: 2px solid #753498;
+    color: #ef0060;
+    border-bottom: 2px solid #ef0060;
   }
 `;

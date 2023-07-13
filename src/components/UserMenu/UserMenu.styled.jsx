@@ -21,7 +21,7 @@ display:flex;
 align-items: center;
   font-size: 24px;
   line-height: 1.2;
-  background: #753498;
+  background: #ef0060;
   border: none;
   border-radius: 12px;
   outline: none;

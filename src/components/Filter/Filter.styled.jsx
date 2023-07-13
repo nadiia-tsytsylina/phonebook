@@ -19,7 +19,7 @@ export const Label = styled.label`
 export const Input = styled.input`
   border: 1px solid rgba(255, 255, 255, 0.5);
   background: none;
-  color: #753498;
+  color: #ef0060;
   border-radius: 12px;
   padding: 8px 16px;
   font-size: 20px;
@@ -31,7 +31,7 @@ export const Input = styled.input`
 
   &:focus {
     box-shadow: 0px 4px 4px rgba(12, 4, 35, 0.1);
-    border: 1px solid #753498;
+    border: 1px solid #ef0060;
     background: rgba(255, 255, 255, 0.3);
   }
 `;

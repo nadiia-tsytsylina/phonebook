@@ -12,7 +12,7 @@ export default function UserMenu() {
   return (
     <UserMenuContainer>
       <UserEmail>
-        <TiUser color="#753498" />
+        <TiUser color="#ef0060" />
         {userName}
       </UserEmail>
       <LogOutButton type="button" onClick={() => dispatch(authLogout())}>

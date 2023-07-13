@@ -28,7 +28,7 @@ export const Input = styled.input`
   border-radius: 12px;
   padding: 8px 16px;
   font-size: 20px;
-  color: #753498;
+  color: #ef0060;
   line-height: 1.2;
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -36,7 +36,7 @@ export const Input = styled.input`
   outline: none;
 
   &:focus {
-    border: 1px solid #753498;
+    border: 1px solid #ef0060;
     background: rgba(255, 255, 255, 0.3);
     box-shadow: 0px 4px 4px rgba(12, 4, 35, 0.1);
   }
@@ -50,10 +50,10 @@ export const SubmitButton = styled.button`
   line-height: 1.2;
   text-transform: uppercase;
   padding: 12px;
-  background-color: rgba(117, 52, 152, 0.5);
+  background-color: rgba(239, 0, 96, 0.7);
   color: #ffffff;
   font-weight: 600;
-  border: 1px solid rgba(117, 52, 152, 0.3);
+  border: 1px solid rgba(239, 0, 96, 0.7);
   border-radius: 24px;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -62,7 +62,7 @@ export const SubmitButton = styled.button`
   :hover,
   :focus {
     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
-    background-color: #753498;
-    border: 1px solid #753498;
+    background-color: #ef0060;
+    border: 1px solid #ef0060;
   }
 `;

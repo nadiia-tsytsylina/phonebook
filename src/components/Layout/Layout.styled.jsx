@@ -31,7 +31,7 @@ export const StyledLink = styled(NavLink)`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &.active {
-    color: #753498;
+    color: #ef0060;
   }
 
   :hover {
