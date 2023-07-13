@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-// axios.defaults.baseURL = 'https://64a93b6b8b9afaf4844a6efd.mockapi.io/Api';
-
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const token = {
@@ -79,12 +77,35 @@ export const authLogin = createAsyncThunk(
   }
 );
 
-export const authLogout = createAsyncThunk('auth/logout', async thunkAPI => {
-  try {
-    const response = await axios.post(`/users/logout`);
-    token.unset();
-    return response.data;
-  } catch (e) {
-    return thunkAPI.rejectWithValue(e.message);
+export const authLogout = createAsyncThunk(
+  'auth/logout',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.post(`/users/logout`);
+      token.unset();
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
   }
-});
+);
+
+export const fetchCurrentUser = createAsyncThunk(
+  'auth/current',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue();
+    }
+
+    token.set(persistedToken);
+
+    try {
+      const response = await axios.get(`/users/current`);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);
