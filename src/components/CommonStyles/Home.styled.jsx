@@ -25,14 +25,36 @@ export const HomeText = styled.p`
   line-height: 1.2;
   color: #ffffff;
 `;
+
 export const HomeLink = styled(Link)`
   margin-left: 8px;
   margin-right: 8px;
   color: #ffffff;
   padding-bottom: 4px;
   border-bottom: 2px solid #ffffff;
+  font-weight: 600;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  :hover,
+  :focus {
+    color: #ef0060;
+    border-bottom: 2px solid #ef0060;
+  }
+`;
+
+export const AuthorText = styled.p`
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.2;
+  color: #ffffff;
+  font-style: italic;
+`;
+
+export const AuthorLink = styled.a`
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 4px;
+  color: #ffffff;
 
   :hover,
   :focus {

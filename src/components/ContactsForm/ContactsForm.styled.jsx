@@ -50,10 +50,10 @@ export const SubmitButton = styled.button`
   line-height: 1.2;
   text-transform: uppercase;
   padding: 12px;
-  background-color: rgba(239, 0, 96, 0.7);
+  background-color: rgba(239, 0, 96, 0.5);
   color: #ffffff;
   font-weight: 600;
-  border: 1px solid rgba(239, 0, 96, 0.7);
+  border: 1px solid rgba(239, 0, 96, 0.5);
   border-radius: 24px;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),

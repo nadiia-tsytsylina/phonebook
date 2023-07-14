@@ -1,10 +1,8 @@
 import { ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { MutatingDots } from 'react-loader-spinner';
 import {
   Title,
   SubTitle,
-  Loader,
   ContactListContainer,
 } from 'components/CommonStyles/Contacts.styled';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,6 +12,7 @@ import { selectError, selectIsLoading } from 'redux/selectors';
 import ContactsForm from 'components/ContactsForm/ContactsForm';
 import Filter from 'components/Filter/Filter';
 import ContactsList from 'components/ContactsList/ContactsList';
+import Loader from 'components/Loader/Loader';
 
 export default function Contacts() {
   const dispatch = useDispatch();
@@ -34,21 +33,7 @@ export default function Contacts() {
         <ContactsList />
       </ContactListContainer>
 
-      {isLoading && !error && (
-        <Loader>
-          <MutatingDots
-            height="100"
-            width="100"
-            color="rgba(117, 52, 152, 0.5)"
-            secondaryColor="rgba(255, 255, 255, 0.5)"
-            radius="12.5"
-            ariaLabel="mutating-dots-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
-        </Loader>
-      )}
+      {isLoading && !error && <Loader />}
       <ToastContainer autoClose={1500} transition={Zoom} hideProgressBar />
     </>
   );

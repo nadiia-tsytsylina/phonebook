@@ -5,6 +5,8 @@ import {
   HomeLink,
   HomeTitle,
   HomeText,
+  AuthorText,
+  AuthorLink,
 } from 'components/CommonStyles/Home.styled';
 
 export default function Home() {
@@ -28,6 +30,16 @@ export default function Home() {
           <HomeLink to="/login">Login</HomeLink>
         </HomeText>
       )}
+      <AuthorText>
+        Created by{' '}
+        <AuthorLink
+          href="https://github.com/nadiia-tsytsylina"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Nadiia Tsytsylina
+        </AuthorLink>
+      </AuthorText>
     </HomeContainer>
   );
 }

@@ -22,15 +22,3 @@ export const ContactListContainer = styled.div`
   box-shadow: 0px 8px 30px rgba(12, 4, 35, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.5);
 `;
-
-export const Loader = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: '100%';
-`;
