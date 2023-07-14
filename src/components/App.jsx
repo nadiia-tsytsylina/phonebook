@@ -1,28 +1,58 @@
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchCurrentUser } from 'redux/operations';
+import { selectAuthIsLoading, selectAuthIsError } from 'redux/selectors';
 import Layout from 'components/Layout/Layout';
 import Register from 'Pages/Register';
 import Login from 'Pages/Login';
 import Contacts from 'Pages/Contacts';
 import Home from 'Pages/Home';
+import Loader from './Loader/Loader';
+import PrivateRoute from './PrivateRoute';
+import PublicRoute from './PublicRoute';
 
 export default function App() {
   const dispatch = useDispatch();
+  const isAuthLoading = useSelector(selectAuthIsLoading);
+  const isAuthError = useSelector(selectAuthIsError);
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
   }, [dispatch]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
-        <Route path="contacts" element={<Contacts />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route
+            path="register"
+            element={
+              <PublicRoute>
+                <Register />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <PublicRoute>
+                <Login />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute>
+                <Contacts />
+              </PrivateRoute>
+            }
+          />
+        </Route>
+      </Routes>
+      {isAuthLoading && !isAuthError && <Loader />}
+    </>
   );
 }
