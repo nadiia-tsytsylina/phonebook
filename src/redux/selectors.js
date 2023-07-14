@@ -7,7 +7,8 @@ export const selectFilter = state => state.filter;
 export const selectIsLoggedIn = state => state.auth.isLoggedIn;
 export const selectUserName = state => state.auth.user.name;
 export const selectAuthIsLoading = state => state.auth.isLoading;
-export const selectAuthIsError = state => state.auth.error;
+export const selectAuthError = state => state.auth.error;
+export const selectIsFetchingUser = state => state.auth.isFetchingUser;
 
 export const selectFiltredContacts = createSelector(
   [selectContacts, selectFilter],

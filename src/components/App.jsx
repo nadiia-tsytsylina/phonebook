@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchCurrentUser } from 'redux/operations';
-import { selectAuthIsLoading, selectAuthIsError } from 'redux/selectors';
+import { selectAuthIsLoading, selectAuthError } from 'redux/selectors';
 import Layout from 'components/Layout/Layout';
 import Register from 'Pages/Register';
 import Login from 'Pages/Login';
@@ -15,7 +15,7 @@ import PublicRoute from './PublicRoute';
 export default function App() {
   const dispatch = useDispatch();
   const isAuthLoading = useSelector(selectAuthIsLoading);
-  const isAuthError = useSelector(selectAuthIsError);
+  const AuthError = useSelector(selectAuthError);
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
@@ -52,7 +52,7 @@ export default function App() {
           />
         </Route>
       </Routes>
-      {isAuthLoading && !isAuthError && <Loader />}
+      {isAuthLoading && !AuthError && <Loader />}
     </>
   );
 }

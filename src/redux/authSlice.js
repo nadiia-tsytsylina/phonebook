@@ -25,6 +25,7 @@ const authSlice = createSlice({
     isLoggedIn: false,
     isLoading: false,
     error: null,
+    isFetchingUser: false,
   },
   extraReducers: {
     [authRegister.pending]: handlePending,
@@ -55,14 +56,22 @@ const authSlice = createSlice({
       state.error = null;
     },
     [authLogout.rejected]: handleRejected,
-    [fetchCurrentUser.pending]: handlePending,
+    [fetchCurrentUser.pending](state) {
+      state.isLoading = true;
+      state.isFetchingUser = true;
+    },
     [fetchCurrentUser.fulfilled](state, action) {
       state.user = action.payload;
       state.isLoggedIn = true;
       state.isLoading = false;
       state.error = null;
+      state.isFetchingUser = false;
     },
-    [fetchCurrentUser.rejected]: handleRejected,
+    [fetchCurrentUser.rejected](state, action) {
+      state.isLoading = false;
+      state.error = action.payload;
+      state.isFetchingUser = false;
+    },
   },
 });
 

@@ -7,7 +7,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #5b5e62;
   background-image: url('https://static.pexels.com/photos/1261728/pexels-photo-1261728.jpeg');
+
   background-size: cover;
   backdrop-filter: blur(3px);
   -webkit-animation: slidein 100s;
