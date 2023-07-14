@@ -5,7 +5,7 @@ import { fetchCurrentUser } from 'redux/operations';
 import {
   selectAuthIsLoading,
   selectAuthError,
-  // selectIsFetchingUser,
+  selectIsFetchingUser,
 } from 'redux/selectors';
 import Layout from 'components/Layout/Layout';
 import Register from 'Pages/Register';
@@ -20,7 +20,7 @@ export default function App() {
   const dispatch = useDispatch();
   const isAuthLoading = useSelector(selectAuthIsLoading);
   const AuthError = useSelector(selectAuthError);
-  // const isFetchingUser = useSelector(selectIsFetchingUser);
+  const isFetchingUser = useSelector(selectIsFetchingUser);
 
   useEffect(() => {
     dispatch(fetchCurrentUser());
@@ -28,39 +28,37 @@ export default function App() {
 
   return (
     <>
-      {/* {!isFetchingUser ? ( */}
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route
-            path="register"
-            element={
-              <PublicRoute>
-                <Register />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="login"
-            element={
-              <PublicRoute>
-                <Login />
-              </PublicRoute>
-            }
-          />
-          <Route
-            path="contacts"
-            element={
-              <PrivateRoute>
-                <Contacts />
-              </PrivateRoute>
-            }
-          />
-        </Route>
-      </Routes>
-      {/* ) : (
-        <Loader />
-      )} */}
+      {!isFetchingUser && (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route
+              path="register"
+              element={
+                <PublicRoute>
+                  <Register />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="login"
+              element={
+                <PublicRoute>
+                  <Login />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="contacts"
+              element={
+                <PrivateRoute>
+                  <Contacts />
+                </PrivateRoute>
+              }
+            />
+          </Route>
+        </Routes>
+      )}
 
       {isAuthLoading && !AuthError && <Loader />}
     </>
