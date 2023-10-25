@@ -8,7 +8,7 @@ The application contains 4 pages:
 
 - Home page - the page with decsription of the app.
 - Register page - the public page where user can register;
-- Login page - the public page where user can search for movies by name;
+- Login page - the public page where user can sign in;
 - Contacts page - the private page where user can add and delete contacts and
   filter them by contact name.
 
